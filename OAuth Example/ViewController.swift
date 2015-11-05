@@ -65,11 +65,14 @@ class ViewController: UIViewController, GCDWebServerDelegate {
       if (success == "1") {
         dispatch_async(dispatch_get_main_queue(),{
           self.instructionLabel.text = "Thank you for logging in. " + oauthToken
+          self.webServer.stop()
         })
         return GCDWebServerDataResponse(HTML:"<html><body><p>Thank you for logging in, you can now use the Apple TV</p></body></html>")
       } else {
         dispatch_async(dispatch_get_main_queue(),{
           self.instructionLabel.text = "I am sorry there was an error."
+          self.webServer.stop()
+          // TODO: handle error, but how, do the whole thing over i guess
         })
         return GCDWebServerDataResponse(HTML:"<html><body><p>I am sorry it did not work.</p></body></html>")
       }
