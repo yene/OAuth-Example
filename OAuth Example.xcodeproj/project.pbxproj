@@ -11,6 +11,7 @@
 		AECF369E1BEB49F20031D956 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECF369D1BEB49F20031D956 /* ViewController.swift */; };
 		AECF36A11BEB49F20031D956 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AECF369F1BEB49F20031D956 /* Main.storyboard */; };
 		AECF36A31BEB49F20031D956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECF36A21BEB49F20031D956 /* Assets.xcassets */; };
+		AECF36AB1BEB4AF30031D956 /* GCDWebServers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECF36AA1BEB4AF30031D956 /* GCDWebServers.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,8 @@
 		AECF36A01BEB49F20031D956 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AECF36A21BEB49F20031D956 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AECF36A41BEB49F20031D956 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AECF36AA1BEB4AF30031D956 /* GCDWebServers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GCDWebServers.framework; path = Carthage/Build/iOS/GCDWebServers.framework; sourceTree = "<group>"; };
+		AECF36AD1BEB4C400031D956 /* WebServer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebServer-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AECF36AB1BEB4AF30031D956 /* GCDWebServers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +40,7 @@
 		AECF368F1BEB49F20031D956 = {
 			isa = PBXGroup;
 			children = (
+				AECF36AA1BEB4AF30031D956 /* GCDWebServers.framework */,
 				AECF369A1BEB49F20031D956 /* OAuth Example */,
 				AECF36991BEB49F20031D956 /* Products */,
 			);
@@ -57,6 +62,7 @@
 				AECF369F1BEB49F20031D956 /* Main.storyboard */,
 				AECF36A21BEB49F20031D956 /* Assets.xcassets */,
 				AECF36A41BEB49F20031D956 /* Info.plist */,
+				AECF36AD1BEB4C400031D956 /* WebServer-Bridging-Header.h */,
 			);
 			path = "OAuth Example";
 			sourceTree = "<group>";
@@ -71,6 +77,7 @@
 				AECF36941BEB49F20031D956 /* Sources */,
 				AECF36951BEB49F20031D956 /* Frameworks */,
 				AECF36961BEB49F20031D956 /* Resources */,
+				AECF36AC1BEB4B000031D956 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -125,6 +132,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AECF36AC1BEB4B000031D956 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/GCDWebServers.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AECF36941BEB49F20031D956 /* Sources */ = {
@@ -236,10 +260,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "OAuth Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yannickweiss.OAuth-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OAuth Example/WebServer-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -248,10 +277,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "OAuth Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yannickweiss.OAuth-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OAuth Example/WebServer-Bridging-Header.h";
 			};
 			name = Release;
 		};
