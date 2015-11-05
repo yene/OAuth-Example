@@ -1,9 +1,7 @@
 # OAuth Example
-How to use OAuth on the Apple TV.
-Apple TV does not ship with a browser so logging into a webservice (OAuth) has to be done on a seperate device.
+How to use OAuth on the Apple TV. Because Apple TV does not ship with a browser the authorization has to be done on a seperate device.
 
 # OAuth 1.0 example with goodreads
-* https://www.goodreads.com/api/documentation#oauth
 
 1. Start a webserver on apple tv
 2. get a request token for OAuth
@@ -14,13 +12,14 @@ http://www.goodreads.com/oauth/authorize?oauth_callback=...&mobile=1&oauth_token
 http://yourapp.com/goodreads_oauth_callback?oauth_token=ezBHZc7C1SwvLGc646PEQ&authorize=1
 
 # Screenshots
-![step 1](step1.png)
-![step 2](step2.png)
+![step 1](material/step1.png)
+![step 2](material/step2.png)
 
 # Problems
 * I could not test bonjour discovery in the simulator.
 * Port 80 is blocked.
 
 # Credits
-* https://github.com/swisspol/GCDWebServer
-* https://github.com/dongri/OAuthSwift
+* [HTTP Server GCDWebServer](https://github.com/swisspol/GCDWebServer)
+* [OAuth library for swift](https://github.com/dongri/OAuthSwift)
+* [Goodreads API](https://www.goodreads.com/api/documentation#oauth)
