@@ -14,6 +14,25 @@ class ViewController: UIViewController {
   @IBOutlet weak var instructionLabel: UILabel!
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    // get request token
+    let oauthswift = OAuth1Swift(
+      consumerKey:    "5rqqWDzRnfXpvvbmP6qKw",
+      consumerSecret: "LQbFp6O9niW1MlMr76CKqNHeJbAjzmyRwk2mbbq0",
+      requestTokenUrl: "http://www.goodreads.com/oauth/request_token",
+      authorizeUrl:    "http://www.goodreads.com/oauth/authorize",
+      accessTokenUrl:  ""
+    )
+    
+    let callbackURL = NSURL(string:"http://chobit.local:8080/")
+    oauthswift.postOAuthRequestTokenWithCallbackURL(callbackURL!, success: { (credential, response) -> Void in
+      print("token is ", credential)
+      }) { (error) -> Void in
+        print("we faile beacuse ", error)
+    }
+
+    
+    
     let webServer = GCDWebServer()
     
     /*

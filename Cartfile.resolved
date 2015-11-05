@@ -1,1 +1,2 @@
 github "swisspol/GCDWebServer" "3.2.7"
+github "dongri/OAuthSwift" "v0.4.6"
