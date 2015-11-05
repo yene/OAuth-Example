@@ -23,6 +23,7 @@
 		AECF36A41BEB49F20031D956 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AECF36AA1BEB4AF30031D956 /* GCDWebServers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GCDWebServers.framework; path = Carthage/Build/iOS/GCDWebServers.framework; sourceTree = "<group>"; };
 		AECF36AD1BEB4C400031D956 /* WebServer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebServer-Bridging-Header.h"; sourceTree = "<group>"; };
+		AECF36AE1BEB50420031D956 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 		AECF368F1BEB49F20031D956 = {
 			isa = PBXGroup;
 			children = (
+				AECF36AE1BEB50420031D956 /* README.md */,
 				AECF36AA1BEB4AF30031D956 /* GCDWebServers.framework */,
 				AECF369A1BEB49F20031D956 /* OAuth Example */,
 				AECF36991BEB49F20031D956 /* Products */,

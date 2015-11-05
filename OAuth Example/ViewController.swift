@@ -11,6 +11,7 @@ import GCDWebServers
 
 class ViewController: UIViewController {
 
+  @IBOutlet weak var instructionLabel: UILabel!
   override func viewDidLoad() {
     super.viewDidLoad()
     let webServer = GCDWebServer()
@@ -20,8 +21,10 @@ class ViewController: UIViewController {
       
     })
   
-    webServer.startWithPort(8080, bonjourName: "GCD Web Server")
+    webServer.startWithPort(8080, bonjourName: "appletv")
     
+    // Todo put into a callback
+    instructionLabel.text = "Please Visit http://chobit.local:8080/ on another device and log in with your account."
     print("Visit \(webServer.serverURL) in your web browser")
   }
 
