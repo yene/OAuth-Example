@@ -1,6 +1,8 @@
 # OAuth Example
 How to use OAuth on the Apple TV. Because Apple TV does not ship with a browser the authorization has to be done on a seperate device.
 
+** Works only with services that let you define a callback in the local network.**
+
 # OAuth 1.0 example with goodreads
 
 1. Start a webserver on apple tv
@@ -10,6 +12,8 @@ How to use OAuth on the Apple TV. Because Apple TV does not ship with a browser 
 http://www.goodreads.com/oauth/authorize?oauth_callback=...&mobile=1&oauth_token=...
 5. Parse oauth token from the callback
 http://yourapp.com/goodreads_oauth_callback?oauth_token=ezBHZc7C1SwvLGc646PEQ&authorize=1
+
+
 
 # Screenshots
 ![step 1](material/step1.png)
